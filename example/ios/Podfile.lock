@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - samurai_scan (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - samurai_scan (from `.symlinks/plugins/samurai_scan/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  samurai_scan:
+    :path: ".symlinks/plugins/samurai_scan/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  samurai_scan: 55d8e0cf9adf485208174fb1cb28e25a871b8850
+
+PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
+
+COCOAPODS: 1.9.3
