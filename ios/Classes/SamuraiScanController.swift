@@ -109,7 +109,7 @@ class SamuraiScanController: UIViewController {
     // 打开相册
     @objc func photoAction() {
         let photo = PhotoController()
-        photo.view.backgroundColor = UIColor.white
+        //photo.view.backgroundColor = UIColor.white
         self.navigationController?.pushViewController(photo, animated: true)
     }
     

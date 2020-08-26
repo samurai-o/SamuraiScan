@@ -389,8 +389,8 @@ open class NavigationDropdownMenu: UIView {
 
         self.menuArrow = UIImageView(image: self.configuration.arrowImage.withRenderingMode(.alwaysTemplate))
         // self.menuButton.addSubview(self.menuArrow)
-        self.menuButton.setTitle(titleToDisplay, for: .normal)
-        self.menuButton.setTitleColor(UIColor.black, for: .normal)
+        self.menuButton.setTitle(self.menuTitle.text, for: .normal)
+        self.menuButton.setTitleColor(UIColor.white, for: .normal)
         self.menuButton.setAttributedTitle(NSAttributedString(string: titleToDisplay), for: .normal)
         //self.menuButton.setAttributedTitleColor(UIColor.black, for: .normal)
 
