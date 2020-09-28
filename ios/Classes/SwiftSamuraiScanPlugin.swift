@@ -61,7 +61,7 @@ extension SwiftSamuraiScanPlugin: SamuraiScanDelegate {
         }
     }
     func didFailCodeWithResult(code: String) {
-              if let channelResult = result {
+        if let channelResult = result {
             channelResult(code as NSString)
         }
     }

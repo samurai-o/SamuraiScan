@@ -10,7 +10,7 @@ open class NavigationDropdownMenu: UIView {
     fileprivate var tableView: NavTableView!
     fileprivate var items: [String]!
     fileprivate var menuWrapper: UIView!
-    fileprivate var menuArrow: UIImageView! 
+    fileprivate var menuArrow: UIImageView!
     open var didSelectItemAtIndexHandler: ((_ indexPath: Int) -> ())?
     open var isShown: Bool!
 
@@ -232,13 +232,13 @@ open class NavigationDropdownMenu: UIView {
     }
 
     override open func layoutSubviews() {
-        self.menuTitle.sizeToFit()
-        self.menuTitle.center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
-        self.menuTitle.textColor = self.configuration.menuTitleColor
-        self.menuArrow.sizeToFit()
-        self.menuArrow.center = CGPoint(x: self.menuTitle.frame.maxX + self.configuration.arrowPadding, y: self.frame.size.height/2)
-        self.menuWrapper.frame.origin.y = self.navigationController!.navigationBar.frame.maxY
-        self.tableView.reloadData()
+         self.menuTitle.sizeToFit()
+         self.menuTitle.center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
+         self.menuTitle.textColor = self.configuration.menuTitleColor
+         self.menuArrow.sizeToFit()
+         self.menuArrow.center = CGPoint(x: self.menuTitle.frame.maxX + self.configuration.arrowPadding, y: self.frame.size.height/2)
+         self.menuWrapper.frame.origin.y = self.navigationController!.navigationBar.frame.maxY
+         self.tableView.reloadData()
     }
 
     open func hide() {
@@ -376,23 +376,23 @@ open class NavigationDropdownMenu: UIView {
         self.items = items
 
         // Init button as navigation title
-        self.menuButton = UIButton(frame: frame)
-        self.menuButton.addTarget(self, action: #selector(NavigationDropdownMenu.menuButtonTapped(_:)), for: UIControl.Event.touchUpInside)
-        self.addSubview(self.menuButton)
-
+        
         self.menuTitle = UILabel(frame: frame)
         self.menuTitle.text = titleToDisplay
         self.menuTitle.textColor = self.menuTitleColor
         self.menuTitle.font = self.configuration.navigationBarTitleFont
         self.menuTitle.textAlignment = self.configuration.cellTextLabelAlignment
-        // self.menuButton.addSubview(self.menuTitle)
-
+        
+        self.menuButton = UIButton(frame: frame)
+        self.menuButton.center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
+        self.menuButton.setTitleColor(UIColor.blue, for: .normal)
+        self.menuButton.addTarget(self, action: #selector(NavigationDropdownMenu.menuButtonTapped(_:)), for: UIControl.Event.touchUpInside)
+        self.menuButton.setImage(self.configuration.arrowImage, for: .normal)
+        self.menuButton.addSubview(self.menuTitle)
+        self.addSubview(self.menuButton)
+        
         self.menuArrow = UIImageView(image: self.configuration.arrowImage.withRenderingMode(.alwaysTemplate))
-        // self.menuButton.addSubview(self.menuArrow)
-        self.menuButton.setTitle(self.menuTitle.text, for: .normal)
-        self.menuButton.setTitleColor(UIColor.white, for: .normal)
-        self.menuButton.setAttributedTitle(NSAttributedString(string: titleToDisplay), for: .normal)
-        //self.menuButton.setAttributedTitleColor(UIColor.black, for: .normal)
+        self.menuButton.addSubview(self.menuArrow)
 
         let menuWrapperBounds = window.bounds
 

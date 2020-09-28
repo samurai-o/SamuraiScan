@@ -33,11 +33,11 @@ final class NavDropDownConfiguration {
         let arrowImagePath = imageBundle?.path(forResource: "arrow_down_icon", ofType: "png")
         
         // Default values
-        self.menuTitleColor = UIColor.darkGray
+        self.menuTitleColor = UIColor.black
         self.cellHeight = 50
         self.cellBackgroundColor = UIColor.white
         self.arrowTintColor = UIColor.white
-        self.cellSeparatorColor = UIColor.darkGray
+        self.cellSeparatorColor = UIColor.blue
         self.cellTextLabelColor = UIColor.darkGray
         self.selectedCellTextLabelColor = UIColor.darkGray
         self.cellTextLabelFont = UIFont(name: "HelveticaNeue-Bold", size: 17)
